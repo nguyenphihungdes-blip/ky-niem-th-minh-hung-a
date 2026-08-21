@@ -27,6 +27,8 @@ jobs:
           cat site-source.zip.001 site-source.zip.002 site-source.zip.003 > /tmp/site-source.zip
           mkdir site
           unzip -q /tmp/site-source.zip -d site
+          mkdir -p site/.openai
+          printf '{}\n' > site/.openai/hosting.json
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
