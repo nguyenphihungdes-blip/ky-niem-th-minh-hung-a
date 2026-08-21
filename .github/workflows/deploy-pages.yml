@@ -29,6 +29,11 @@ jobs:
           unzip -q /tmp/site-source.zip -d site
           mkdir -p site/.openai
           printf '{}\n' > site/.openai/hosting.json
+      - name: Gắn nhạc MP3 trực tiếp
+        run: |
+          cp override-main.jsx site/src/main.jsx
+          mkdir -p site/public/audio
+          cp mong-uoc-ky-niem-xua.mp3 site/public/audio/mong-uoc-ky-niem-xua.mp3
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
